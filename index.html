@@ -1,1 +1,203 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asif Khan | Academic Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #172033;
+      line-height: 1.7;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 20px 8%;
+      background: white;
+      border-bottom: 1px solid #e5eaf0;
+    }
+    .logo { font-size: 21px; font-weight: bold; color: #2563a6; }
+    nav { display: flex; gap: 20px; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #344256; font-size: 14px; }
+    nav a:hover { color: #2563a6; }
+    main { max-width: 1050px; margin: auto; padding: 30px 24px; }
+    .hero { padding: 100px 0 90px; }
+    .tag {
+      color: #2879b9;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 70px);
+      line-height: 1.15;
+      margin: 18px 0;
+      letter-spacing: -2px;
+    }
+    h1 span { color: #2879b9; }
+    .intro { max-width: 680px; color: #5b6678; font-size: 18px; }
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 23px;
+      border-radius: 7px;
+      background: #254c78;
+      color: white;
+      text-decoration: none;
+    }
+    section {
+      padding: 55px 0;
+      border-top: 1px solid #e0e6ee;
+      scroll-margin-top: 20px;
+    }
+    h2 { font-size: 30px; margin-bottom: 18px; }
+    .muted { color: #5b6678; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e4e9f0;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card h3 { color: #254c78; margin-bottom: 10px; }
+    .contact-link { color: #2563a6; }
+    footer {
+      text-align: center;
+      padding: 28px 16px;
+      background: white;
+      border-top: 1px solid #e0e6ee;
+      color: #657286;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header { padding: 18px 5%; }
+      nav { gap: 12px; }
+      main { padding: 20px 6%; }
+      .hero { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Asif Khan.</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="tag">Welcome to my personal website</p>
+      <h1>Hello, I'm <span>Asif Khan.</span></h1>
+      <p class="intro">
+        I am a postgraduate student in Medical Biochemistry with an
+        interest in clinical research, biochemical markers and scientific
+        discovery. This website showcases my academic journey, research
+        interests and professional achievements.
+      </p>
+      <a class="button" href="#about">Discover my work</a>
+    </div>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="muted">
+        Welcome to my academic portfolio. I am passionate about
+        understanding human health through biochemistry and laboratory
+        investigations. I aim to develop my knowledge and contribute
+        to scientific research.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <p class="muted">
+        My interests include clinical biochemistry, renal biomarkers,
+        metabolic disorders and evidence-based biomedical research.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Diabetic Kidney Disease</h3>
+          <p class="muted">
+            Exploring biochemical markers and factors associated
+            with diabetic nephropathy.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Biomarker Research</h3>
+          <p class="muted">
+            Interested in novel biomarkers for early detection
+            and understanding of disease.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Systematic Reviews</h3>
+          <p class="muted">
+            Learning evidence synthesis and critical appraisal
+            of biomedical research.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>MSc Medical Biochemistry</h3>
+        <p class="muted">
+          Add your institution name, study period and other
+          educational qualifications here.
+        </p>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Projects & Achievements</h2>
+      <div class="card">
+        <h3>Academic Research</h3>
+        <p class="muted">
+          Add your thesis details, conference posters, abstracts,
+          publications, presentations and certificates as they
+          become available.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p class="muted">
+        For professional enquiries, academic discussions or
+        research collaboration, you can contact me by email.
+      </p>
+      <p style="margin-top: 15px;">
+        <a class="contact-link"
+           href="mailto:your.email@example.com">
+          Add your professional email address
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Asif Khan · Personal Academic Portfolio
+  </footer>
+</body>
+</html>
+
