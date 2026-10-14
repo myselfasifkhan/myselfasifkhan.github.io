@@ -1,203 +1,346 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asif Khan | Academic Portfolio</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8fafc;
-      color: #172033;
-      line-height: 1.7;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      padding: 20px 8%;
-      background: white;
-      border-bottom: 1px solid #e5eaf0;
-    }
-    .logo { font-size: 21px; font-weight: bold; color: #2563a6; }
-    nav { display: flex; gap: 20px; flex-wrap: wrap; }
-    nav a { text-decoration: none; color: #344256; font-size: 14px; }
-    nav a:hover { color: #2563a6; }
-    main { max-width: 1050px; margin: auto; padding: 30px 24px; }
-    .hero { padding: 100px 0 90px; }
-    .tag {
-      color: #2879b9;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: bold;
-      font-size: 13px;
-    }
-    h1 {
-      font-size: clamp(40px, 7vw, 70px);
-      line-height: 1.15;
-      margin: 18px 0;
-      letter-spacing: -2px;
-    }
-    h1 span { color: #2879b9; }
-    .intro { max-width: 680px; color: #5b6678; font-size: 18px; }
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 23px;
-      border-radius: 7px;
-      background: #254c78;
-      color: white;
-      text-decoration: none;
-    }
-    section {
-      padding: 55px 0;
-      border-top: 1px solid #e0e6ee;
-      scroll-margin-top: 20px;
-    }
-    h2 { font-size: 30px; margin-bottom: 18px; }
-    .muted { color: #5b6678; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-      margin-top: 22px;
-    }
-    .card {
-      background: white;
-      border: 1px solid #e4e9f0;
-      border-radius: 12px;
-      padding: 24px;
-    }
-    .card h3 { color: #254c78; margin-bottom: 10px; }
-    .contact-link { color: #2563a6; }
-    footer {
-      text-align: center;
-      padding: 28px 16px;
-      background: white;
-      border-top: 1px solid #e0e6ee;
-      color: #657286;
-      font-size: 14px;
-    }
-    @media (max-width: 600px) {
-      header { padding: 18px 5%; }
-      nav { gap: 12px; }
-      main { padding: 20px 6%; }
-      .hero { padding: 60px 0; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06040d">
+<meta name="description" content="Asif Khan's academic portfolio in Medical Biochemistry, laboratory skills, research and scientific interests.">
+<title>Asif Khan | Medical Biochemistry Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--tx:#f4f0fd;--mu:#aaa4c6;--violet:#a78bfa;--pink:#f472b6;--cyan:#22d3ee;--ln:rgba(255,255,255,.14);--serif:"Newsreader",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#06040d;scroll-behavior:smooth}
+body{font:400 17px/1.75 var(--sans);color:var(--tx);-webkit-font-smoothing:antialiased}
+a{color:var(--violet)}
+::selection{background:rgba(139,92,246,.45);color:#fff}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;top:-100px;left:16px;z-index:100;background:#fff;color:#06040d;padding:10px 16px;border-radius:8px}
+.skip:focus{top:10px}
+
+/* Backdrop: DNA canvas, black tint and blur */
+#dna{position:fixed;inset:0;width:100%;height:100%;z-index:-2;filter:blur(2.5px);opacity:.85}
+.veil{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 560px at 85% -5%,rgba(139,92,246,.20),transparent 65%),radial-gradient(760px 520px at 4% 104%,rgba(236,72,153,.13),transparent 62%),rgba(5,2,12,.62);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.bar{position:fixed;top:0;left:0;z-index:60;width:100%;height:3px;background:linear-gradient(90deg,var(--violet),var(--pink),var(--cyan));transform:scaleX(0);transform-origin:0 50%;animation:prog linear both;animation-timeline:scroll(root)}
+@keyframes prog{to{transform:scaleX(1)}}
+@supports not (animation-timeline:scroll()){.bar{display:none}}
+
+/* Glass */
+.panel,header{background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.04));border:1px solid var(--ln);box-shadow:0 24px 60px -28px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.2);-webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,header{background:rgba(12,19,27,.92)}}
+
+/* Motion */
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.rv{opacity:0}
+.rv.in{opacity:1;animation:up .9s var(--ease) backwards;animation-delay:var(--d,0s)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Header */
+header{position:sticky;top:12px;z-index:50;width:min(1160px,94%);margin:12px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px 10px 24px;border-radius:999px}
+.logo{font:600 23px var(--serif);color:var(--tx);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--mu);font-size:14px;font-weight:500;text-decoration:none;padding:7px 13px;border-radius:999px;white-space:nowrap;transition:color .25s,background .25s}
+nav a:hover,nav a.on{color:var(--tx);background:rgba(255,255,255,.1)}
+main{width:min(1040px,90%);margin:0 auto;padding-bottom:20px}
+
+/* Hero */
+.hero{text-align:center;padding:72px 0 56px}
+.hero>*{animation:up 1s var(--ease) backwards;animation-delay:calc(var(--i,0)*.12s)}
+.ph{position:relative;width:176px;height:176px;margin:0 auto 28px;padding:7px;border-radius:50%}
+.ph::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--violet),var(--pink),var(--cyan),var(--violet));-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));animation:spin 14s linear infinite}
+.ph div{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:rgba(255,255,255,.08);display:grid;place-items:center;font:500 44px var(--serif);color:var(--violet);box-shadow:0 14px 40px -10px rgba(139,92,246,.35)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 30%;transform:scale(1.45);transform-origin:52% 32%}
+.eyebrow{display:inline-block;padding:5px 16px;margin-bottom:16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:var(--violet);font-size:13px;font-weight:600}
+h1{font:500 clamp(40px,7vw,70px)/1.08 var(--serif);letter-spacing:-.02em;margin-bottom:14px}
+h1 span{background:linear-gradient(100deg,var(--violet),var(--pink) 55%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.headline{font-size:clamp(17px,2.4vw,21px);font-weight:500;color:var(--pink);margin-bottom:14px}
+.desc{max-width:660px;margin:0 auto;color:var(--mu)}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;padding:12px 24px;border-radius:999px;border:1px solid transparent;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-size:15px;font-weight:600;text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px -10px rgba(139,92,246,.6)}
+.btn.alt{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);color:var(--tx)}
+
+/* Sections */
+section{padding:34px 0;scroll-margin-top:96px}
+.panel{position:relative;padding:38px;border-radius:26px}
+.panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .5s;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0),rgba(255,255,255,.10),transparent 65%)}
+.panel:hover::after{opacity:1}
+.label{display:block;margin-bottom:4px;color:var(--pink);font-size:13px;font-weight:600;letter-spacing:.05em}
+h2{font:500 clamp(28px,4vw,38px)/1.2 var(--serif);letter-spacing:-.01em;margin-bottom:22px}
+h3{font:500 21px/1.35 var(--serif);margin-bottom:6px}
+p{margin-bottom:12px}
+.panel>p{max-width:48em}
+.mu{color:var(--mu)}
+.panel p:last-child{margin-bottom:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}
+.tile{padding:22px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:transform .35s var(--ease),border-color .35s,background .35s}
+.tile:hover{transform:translateY(-4px);border-color:rgba(139,92,246,.45);background:rgba(255,255,255,.08)}
+.tile p{margin-bottom:0}
+.ico{display:grid;place-items:center;width:42px;height:42px;margin-bottom:14px;border-radius:12px;background:rgba(139,92,246,.12);color:var(--violet);font-size:21px}
+.tl{margin:4px 0 0 8px;padding-left:28px;border-left:2px solid rgba(139,92,246,.28)}
+.tli{position:relative;margin-bottom:30px}
+.tli:last-child{margin-bottom:0}
+.tli::before{content:"";position:absolute;left:-35px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--violet);box-shadow:0 0 0 4px rgba(139,92,246,.18),0 0 18px rgba(139,92,246,.6)}
+.meta{margin-bottom:6px;color:var(--violet);font-size:13px;font-weight:600}
+.feature{padding:28px;border-radius:18px;background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(244,114,182,.07));border:1px solid rgba(139,92,246,.25)}
+.feature h3{font-size:24px;margin-bottom:12px}
+.note{color:var(--mu);font-size:14px;font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+.chip{padding:7px 15px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);font-size:14px}
+.contact{background:linear-gradient(145deg,rgba(139,92,246,.16),rgba(255,255,255,.04))}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.links a{padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:var(--tx);font-size:15px;text-decoration:none;transition:transform .3s var(--ease),background .3s}
+.links a:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+footer{padding:36px 16px 44px;text-align:center;color:var(--mu);font-size:14px}
+footer p{margin-bottom:6px}
+footer a{color:var(--mu);text-underline-offset:4px}
+
+@media(max-width:820px){
+header{flex-wrap:wrap;padding:12px 16px;border-radius:24px}
+nav{width:100%}
+}
+@media(max-width:760px){
+.hero{padding:48px 0 36px}
+.panel{padding:24px;border-radius:22px}
+.grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.hero>*,.rv.in,.ph::before{animation:none!important}
+.rv{opacity:1!important}
+.tile,.btn,.links a{transition:none}
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">Asif Khan.</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#education">Education</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="dna" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+<div class="bar" aria-hidden="true"></div>
 
-  <main>
-    <div class="hero">
-      <p class="tag">Welcome to my personal website</p>
-      <h1>Hello, I'm <span>Asif Khan.</span></h1>
-      <p class="intro">
-        I am a postgraduate student in Medical Biochemistry with an
-        interest in clinical research, biochemical markers and scientific
-        discovery. This website showcases my academic journey, research
-        interests and professional achievements.
-      </p>
-      <a class="button" href="#about">Discover my work</a>
+<header>
+  <a class="logo" href="#home" aria-label="Asif Khan, home">Asif Khan.</a>
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#cv">CV</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HOME -->
+  <div class="hero" id="home">
+    <div class="ph" style="--i:0"><div><span aria-hidden="true">AK</span><img src="profile.jpeg" alt="Profile photograph of Asif Khan" width="170" height="170" fetchpriority="high" onerror="this.remove()"></div></div>
+    <span class="eyebrow" style="--i:1">Academic Portfolio</span>
+    <h1 style="--i:2">Hello, I'm <span>Asif Khan.</span></h1>
+    <p class="headline" style="--i:3">MSc Medical Biochemistry</p>
+    <p class="desc" style="--i:4">I am a postgraduate student in Medical Biochemistry interested in clinical biochemistry, laboratory investigations and biomedical research. This portfolio presents my academic background, ongoing research, technical skills and professional interests.</p>
+    <div class="actions" style="--i:5">
+      <a class="btn" href="#research">Explore my research</a>
+      <a class="btn alt" href="#contact">Get in touch</a>
     </div>
+  </div>
 
-    <section id="about">
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="panel">
+      <span class="label">Introduction</span>
       <h2>About Me</h2>
-      <p class="muted">
-        Welcome to my academic portfolio. I am passionate about
-        understanding human health through biochemistry and laboratory
-        investigations. I aim to develop my knowledge and contribute
-        to scientific research.
-      </p>
-    </section>
+      <p class="mu">I have a background in Medical Laboratory Technology and am currently pursuing postgraduate studies in Medical Biochemistry. My academic interests include understanding biochemical processes, laboratory investigations and the role of biomarkers in disease.</p>
+      <p class="mu">I am particularly interested in clinical biochemistry, renal biomarkers, metabolic disorders and scientific literature. Through my academic work, I aim to strengthen my laboratory knowledge and develop my research skills.</p>
+    </div>
+  </section>
 
-    <section id="research">
-      <h2>Research Interests</h2>
-      <p class="muted">
-        My interests include clinical biochemistry, renal biomarkers,
-        metabolic disorders and evidence-based biomedical research.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h3>Diabetic Kidney Disease</h3>
-          <p class="muted">
-            Exploring biochemical markers and factors associated
-            with diabetic nephropathy.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Biomarker Research</h3>
-          <p class="muted">
-            Interested in novel biomarkers for early detection
-            and understanding of disease.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Systematic Reviews</h3>
-          <p class="muted">
-            Learning evidence synthesis and critical appraisal
-            of biomedical research.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="panel">
+      <span class="label">Academic Background</span>
       <h2>Education</h2>
-      <div class="card">
-        <h3>MSc Medical Biochemistry</h3>
-        <p class="muted">
-          Add your institution name, study period and other
-          educational qualifications here.
-        </p>
+      <div class="tl">
+        <article class="tli">
+          <p class="meta">2024 – Present</p>
+          <h3>Master of Science (MSc) in Medical Biochemistry</h3>
+          <p class="mu">Saveetha Institute of Medical and Technical Sciences (SIMATS), Saveetha University</p>
+          <p class="mu">Chennai, Tamil Nadu, India</p>
+          <p class="mu">Postgraduate study with interests in clinical biochemistry, laboratory investigations and biomedical research.</p>
+        </article>
+        <article class="tli">
+          <p class="meta">Completed in 2024</p>
+          <h3>Bachelor of Science in Medical Laboratory Technology</h3>
+          <p class="mu">NRI Academy of Sciences, Guntur, Andhra Pradesh, India</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="achievements">
-      <h2>Projects & Achievements</h2>
-      <div class="card">
-        <h3>Academic Research</h3>
-        <p class="muted">
-          Add your thesis details, conference posters, abstracts,
-          publications, presentations and certificates as they
-          become available.
-        </p>
+  <!-- RESEARCH INTERESTS -->
+  <section id="research">
+    <div class="panel">
+      <span class="label">Scientific Interests</span>
+      <h2>Research Interests</h2>
+      <p class="mu">My research interests focus on clinical biochemistry, renal biomarkers, metabolic disorders and adiposity indices.</p>
+      <div class="grid">
+        <article class="tile"><div class="ico" aria-hidden="true">⌕</div><h3>Clinical Biochemistry</h3><p class="mu">Biochemical investigations and laboratory parameters used in the assessment of health and disease.</p></article>
+        <article class="tile"><div class="ico" aria-hidden="true">◇</div><h3>Renal Biomarkers</h3><p class="mu">Interest in diabetic kidney disease, kidney function assessment and biomarkers associated with renal injury.</p></article>
+        <article class="tile"><div class="ico" aria-hidden="true">◎</div><h3>Adiposity and Metabolism</h3><p class="mu">Exploring adiposity indices and their potential association with metabolic and renal outcomes.</p></article>
+        <article class="tile"><div class="ico" aria-hidden="true">▤</div><h3>Evidence-Based Research</h3><p class="mu">Interest in scientific literature, research methodology and critical evaluation of biomedical evidence.</p></article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p class="muted">
-        For professional enquiries, academic discussions or
-        research collaboration, you can contact me by email.
-      </p>
-      <p style="margin-top: 15px;">
-        <a class="contact-link"
-           href="mailto:your.email@example.com">
-          Add your professional email address
-        </a>
-      </p>
-    </section>
-  </main>
+  <!-- RESEARCH PROJECT -->
+  <section id="projects">
+    <div class="panel">
+      <span class="label">Current Academic Work</span>
+      <h2>Research Projects</h2>
+      <article class="feature">
+        <p class="meta">Ongoing Research</p>
+        <h3>Relative Fat Mass (RFM), a Novel Index of Adiposity in Diabetic Nephropathy – A Case-Control Study</h3>
+        <p class="mu">This research focuses on Relative Fat Mass (RFM), an anthropometric index of adiposity, and its association with diabetic nephropathy.</p>
+        <p class="mu">The project explores the potential relationship between adiposity assessment and kidney-related clinical parameters. The study's findings and conclusions will be added when they are available.</p>
+        <p class="note">Status: Ongoing. Study results have not been presented here.</p>
+      </article>
+    </div>
+  </section>
 
-  <footer>
-    © 2026 Asif Khan · Personal Academic Portfolio
-  </footer>
+  <!-- LABORATORY SKILLS -->
+  <section id="skills">
+    <div class="panel">
+      <span class="label">Technical Capabilities</span>
+      <h2>Laboratory Skills</h2>
+      <p class="mu">Laboratory techniques and analytical equipment in my academic and technical background.</p>
+      <div class="chips" aria-label="Laboratory techniques">
+        <span class="chip">Electrophoresis</span>
+        <span class="chip">ELISA</span>
+        <span class="chip">Chromatography</span>
+      </div>
+      <h3>Laboratory Equipment</h3>
+      <div class="grid">
+        <article class="tile"><h3>VITROS 5600</h3><p class="mu">Automated clinical chemistry and immunodiagnostic laboratory platform.</p></article>
+        <article class="tile"><h3>Erba Semi-Automated Analyzer</h3><p class="mu">Semi-automated analyzer used for clinical laboratory biochemical testing.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="panel">
+      <span class="label">Professional Profile</span>
+      <h2>CV &amp; Resume</h2>
+      <div class="tile">
+        <h3>Curriculum Vitae</h3>
+        <p class="mu">A downloadable CV can be added here when your document is ready.</p>
+        <p class="note" style="margin-top:12px">To enable downloading, upload your CV PDF to this repository and add its file link here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="panel">
+      <span class="label">Academic Record</span>
+      <h2>Publications &amp; Achievements</h2>
+      <div class="tile">
+        <p class="mu">This section is reserved for verified publications, conference abstracts, awards, certificates and academic achievements as they become available.</p>
+        <p class="note" style="margin-top:12px">Add confirmed titles, dates, publication links or award details before publishing them here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="panel contact">
+      <span class="label">Contact</span>
+      <h2>Let's Connect</h2>
+      <p class="mu">For professional enquiries, academic discussions and potential research collaborations, you can reach me through the links below.</p>
+      <div class="links">
+        <a href="mailto:pasif3047@gmail.com">Email me</a>
+        <a href="https://www.linkedin.com/in/pathan-asif-khan-3822bb339/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://orcid.org/0009-0002-2731-7238" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year">2026</span> Asif Khan · Academic and Research Portfolio</p>
+  <p><a href="#home">Back to top ↑</a></p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const rm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Reveal panels, tiles and timeline items as they scroll into view */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: .1 });
+document.querySelectorAll(".panel,.tile,.tli").forEach((el, i) => {
+  el.classList.add("rv");
+  if (el.matches(".tile,.tli")) el.style.setProperty("--d", (i % 4) * .08 + "s");
+  io.observe(el);
+});
+
+/* Highlight the current section in the nav */
+const links = [...document.querySelectorAll("nav a")];
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.hash === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section").forEach(s => spy.observe(s));
+
+/* Soft light on glass panels follows the pointer */
+document.querySelectorAll(".panel").forEach(p => p.addEventListener("pointermove", e => {
+  const r = p.getBoundingClientRect();
+  p.style.setProperty("--mx", e.clientX - r.left + "px");
+  p.style.setProperty("--my", e.clientY - r.top + "px");
+}));
+
+/* Revolving DNA double helix (drawn at half resolution, blurred by CSS) */
+const c = document.getElementById("dna"), g = c.getContext("2d");
+let W, H, t = 0, last = 0;
+const fit = () => { W = c.width = innerWidth >> 1; H = c.height = innerHeight >> 1; };
+const D = [{ x: .84, s: 1, v: .8, p: 0 }, { x: .06, s: .6, v: -.55, p: 2 }];
+function draw() {
+  g.clearRect(0, 0, W, H);
+  for (const d of D) {
+    const R = Math.min(W, H) * .17 * d.s, n = 40, st = Math.hypot(W, H) * 1.4 / n, off = scrollY * .03 * d.s, P = [[], []];
+    g.save(); g.translate(W * d.x, H / 2); g.rotate(-.38);
+    for (let i = 0; i < n; i++) {
+      const y = (i - n / 2) * st + off, a = i * .6 + t * d.v + d.p;
+      for (let k = 0; k < 2; k++) { const b = a + k * Math.PI; P[k].push({ x: R * Math.cos(b), y, z: Math.sin(b) }); }
+    }
+    g.lineWidth = 1.2;
+    P[0].forEach((A, i) => {
+      const B = P[1][i];
+      g.strokeStyle = `rgba(205,195,240,${.1 + .12 * (A.z + 1) / 2})`;
+      g.beginPath(); g.moveTo(A.x, A.y); g.lineTo(B.x, B.y); g.stroke();
+    });
+    P.forEach((s, k) => {
+      g.strokeStyle = k ? "rgba(244,114,182,.32)" : "rgba(139,92,246,.32)";
+      g.beginPath(); s.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.stroke();
+    });
+    for (const front of [false, true]) P.forEach((s, k) => s.forEach(p => {
+      if ((p.z >= 0) !== front) return;
+      g.fillStyle = `rgba(${k ? "244,114,182" : "139,92,246"},${.28 + .45 * (p.z + 1) / 2})`;
+      g.beginPath(); g.arc(p.x, p.y, (3 + 1.8 * p.z) * d.s, 0, 6.283); g.fill();
+    }));
+    g.restore();
+  }
+}
+fit();
+addEventListener("resize", () => { fit(); if (rm) draw(); });
+const loop = ts => { if (ts - last > 33) { last = ts; t += .014; draw(); } requestAnimationFrame(loop); };
+rm ? draw() : requestAnimationFrame(loop);
+</script>
 </body>
 </html>
-
